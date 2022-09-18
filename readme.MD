@@ -1,4 +1,4 @@
-# Node Starter
+# Node Quickstart
 
 a template repository to quickstart a new Project in NodeJs with express.
 
