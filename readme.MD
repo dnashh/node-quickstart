@@ -40,4 +40,4 @@ To get started quickly, some of the popular dependencies are installed when you 
 
 ## Contribution
 
-Feel free to contribute to this project by forking and making a merge request.
+Feel free to contribute to this project by forking and making a pull request.
