@@ -8,7 +8,10 @@ const errorHandler = require('./src/utils/errorHandler');
 
 const app = express();
 
-app.use(cors())
+app.use(cors({
+    origin: '*',
+    credentials: true,
+}));
 app.set('views', `${__dirname}/src/views`);
 app.set('view engine', 'ejs');
 
