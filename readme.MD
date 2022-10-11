@@ -1,6 +1,6 @@
 # Node Quickstart
 
-a template repository to quickstart a new Project in NodeJs with express.
+a template repository to QuickStart a new Project in NodeJS with express.
 
 ---
 
