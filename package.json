@@ -28,7 +28,8 @@
     "pg": "^8.8.0",
     "sequelize": "^6.25.0",
     "sqlite3": "^5.1.6",
-    "winston": "^3.10.0"
+    "winston": "^3.10.0",
+    "winston-daily-rotate-file": "^4.7.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
