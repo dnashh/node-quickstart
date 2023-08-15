@@ -1,28 +1,33 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from "express";
 
 interface ErrorResponse {
-    status: number;
-    message: string;
+  status: number;
+  message: string;
 }
 
-const errorHandler = (err: any, _req: Request, res: Response, _next: NextFunction) => {
-    let statusCode = 500;
-    let message = 'Internal Server Error';
+const errorHandler = (
+  err: any,
+  _req: Request,
+  res: Response,
+  _next: NextFunction,
+) => {
+  let statusCode = 500;
+  let message = "Internal Server Error";
 
-    if (err instanceof Error) {
-        message = err.message;
-    }
+  if (err instanceof Error) {
+    message = err.message;
+  }
 
-    if (err.status && typeof err.status === 'number') {
-        statusCode = err.status;
-    }
+  if (err.status && typeof err.status === "number") {
+    statusCode = err.status;
+  }
 
-    const errorResponse: ErrorResponse = {
-        status: statusCode,
-        message: message,
-    };
+  const errorResponse: ErrorResponse = {
+    status: statusCode,
+    message: message,
+  };
 
-    res.status(statusCode).json(errorResponse);
+  res.status(statusCode).json(errorResponse);
 };
 
 export default errorHandler;
