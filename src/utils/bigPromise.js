@@ -3,4 +3,4 @@ const bigPromise = func  => (req, res, next) => {
     .catch(next);
 };
 
-module.exports = bigPromise;
+export default bigPromise;

@@ -1,10 +1,14 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
-const path = require('path');
-const morgan = require('morgan');
-const router = require('./src/routes/index');
-const errorHandler = require('./src/utils/errorHandler');
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import path from 'path';
+import morgan from 'morgan';
+import { fileURLToPath } from 'url';
+import router from './src/routes/indexRouter.js';
+import errorHandler from './src/utils/errorHandler.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -27,4 +31,4 @@ app.use(router);
 
 app.use(errorHandler)
 
-module.exports = app;
+export default app;

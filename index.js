@@ -1,5 +1,5 @@
-const app = require('./app');
-const connection = require('./src/config/database');
+import app from './app.js';
+import connection from './src/config/databaseConfig.js';
 const PORT = process.env.PORT || 9000;
 const HOST = process.env.HOST || 'http://localhost';
 
