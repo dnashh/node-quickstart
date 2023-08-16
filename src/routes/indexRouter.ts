@@ -5,4 +5,8 @@ const router = express.Router();
 
 router.use("/api", apiIndexRouter);
 
+router.get("/", (_req, res) => {
+    res.render("index");
+});
+
 export default router;
