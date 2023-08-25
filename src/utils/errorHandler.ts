@@ -1,11 +1,17 @@
-import { Request, Response } from "express";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Request, Response, NextFunction } from "express";
 
 interface ErrorResponse {
   status: number;
   message: string;
 }
 
-const errorHandler = (err: any, _req: Request, res: Response) => {
+const errorHandler = (
+  err: any,
+  _req: Request,
+  res: Response,
+  __next: NextFunction,
+) => {
   let statusCode = 500;
   let message = "Internal Server Error";
 
@@ -17,12 +23,12 @@ const errorHandler = (err: any, _req: Request, res: Response) => {
     statusCode = err.status;
   }
 
-  const errorResponse: ErrorResponse = {
+  const error: ErrorResponse = {
     status: statusCode,
     message: message,
   };
 
-  res.status(statusCode).json(errorResponse);
+  res.status(statusCode).json({ error });
 };
 
 export default errorHandler;
