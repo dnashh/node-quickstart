@@ -1,16 +1,11 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 
 interface ErrorResponse {
   status: number;
   message: string;
 }
 
-const errorHandler = (
-  err: any,
-  _req: Request,
-  res: Response,
-  _next: NextFunction,
-) => {
+const errorHandler = (err: any, _req: Request, res: Response) => {
   let statusCode = 500;
   let message = "Internal Server Error";
 
