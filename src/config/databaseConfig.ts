@@ -16,7 +16,7 @@ if (DB_DIALECT === "mysql") {
   CONNECTION_STRING = "sqlite::memory:";
 }
 
-const sequelize = new Sequelize(CONNECTION_STRING, {
+export const sequelize = new Sequelize(CONNECTION_STRING, {
   logging: false,
 });
 
