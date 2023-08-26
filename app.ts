@@ -1,3 +1,4 @@
+import { config } from "dotenv";
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -10,11 +11,12 @@ import errorHandler from "./src/utils/errorHandler.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+config();
 const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: process.env.ALLOW_ORIGINS?.split(",") || "*",
     credentials: true,
   }),
 );
