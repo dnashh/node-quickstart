@@ -10,7 +10,7 @@ const User = sequelize.define("User", {
         primaryKey: true,
         allowNull: false,
         unique: true,
-        defaultValue: nanoid(),
+        defaultValue: nanoid,
     },
     name: {
         type: DataTypes.STRING,
@@ -18,7 +18,7 @@ const User = sequelize.define("User", {
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true,
         validate: {
             isEmail: true
@@ -31,6 +31,7 @@ const User = sequelize.define("User", {
     },
     phone: {
         type: DataTypes.STRING,
+        unique: true,
         validate: {
             // eslint-disable-next-line no-useless-escape
             is: "^\+\d{1,4}\d{10}$",
@@ -38,7 +39,7 @@ const User = sequelize.define("User", {
     },
     username: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true
     },
     password: {
