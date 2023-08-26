@@ -4,6 +4,7 @@ import { Request, Response, NextFunction } from "express";
 interface ErrorResponse {
   status: number;
   message: string;
+  detail?: object;
 }
 
 const errorHandler = (
@@ -26,6 +27,7 @@ const errorHandler = (
   const error: ErrorResponse = {
     status: statusCode,
     message: message,
+    detail: err,
   };
 
   res.status(statusCode).json({ error });
