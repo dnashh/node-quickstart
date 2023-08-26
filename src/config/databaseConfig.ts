@@ -1,4 +1,7 @@
+import { config } from "dotenv";
 import { Sequelize } from "sequelize";
+
+config();
 
 const { DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST, DB_DIALECT } = process.env;
 
@@ -24,6 +27,7 @@ const client = {
   connect: async (callback: (e: any) => void) => {
     try {
       await sequelize.authenticate();
+      console.log(`Connected to DB ${DB_DIALECT || "Sqlite"}`);
       callback(null);
     } catch (err: any) {
       callback(err);
